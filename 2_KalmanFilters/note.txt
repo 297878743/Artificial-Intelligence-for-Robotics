@@ -1,1 +1,2 @@
-Markov model  离散模型
+Markov model  离散模型    Kalman Filter 连续模型
+Gaussian  方差，均值
