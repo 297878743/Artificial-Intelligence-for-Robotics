@@ -1,0 +1,6 @@
+belief = probability  信度 = 概率   每个位置的确信程度
+sense = product   感知之后更新信度，normalization归一化     得到信息
+motion = convolution  卷积，运动之后更新信度     损失信息
+
+bayes rule 贝叶斯公式
+theorem of total probability 全概率公式   t时刻这个格子的信度 = t-1时刻所有格子到达这个格子的概率和
