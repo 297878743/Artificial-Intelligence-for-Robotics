@@ -107,7 +107,7 @@ def eval(r, p):
 myrobot = robot()
 myrobot = myrobot.move(0.1, 5.0)
 Z = myrobot.sense()
-N = 1000
+N = 1000  #生成1000个particle
 T = 10 #Leave this as 10 for grading purposes.
 
 p = []
@@ -128,17 +128,18 @@ for t in range(T):
     w = []
     for i in range(N):
         w.append(p[i].measurement_prob(Z))
-
+   #转盘选择法开始
     p3 = []
     index = int(random.random() * N)
     beta = 0.0
     mw = max(w)
     for i in range(N):
-        beta += random.random() * 2.0 * mw
+        beta += random.random() * 2.0 * mw #等于二倍的最大值 保证步长能走过两个扇形
         while beta > w[index]:
             beta -= w[index]
             index = (index + 1) % N
         p3.append(p[index])
     p = p3
+    #转盘选择法结束
     #enter code here, make sure that you output 10 print statements.
     print eval(myrobot,p)
